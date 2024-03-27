@@ -19,9 +19,15 @@ public class BallController : MonoBehaviour
     {
         rb.AddForce(direction*force*Time.deltaTime*500);
     }
+
     void Goal()
     {
         SceneManager.LoadScene(1);
+        if (sc.scoreP1==5||sc.scoreP2==5)    
+        {
+            sc.scoreP2 = 0;
+            sc.scoreP1 = 0;
+        }
     }
     private void OnTriggerEnter2D(Collider2D cls)
     {
